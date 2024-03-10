@@ -8,8 +8,8 @@ import lombok.Data;
 public class HarvestDataDTO {
     private Long id;
     private Double actualProduct;
-    private Long cropTypeId;
+    private String cropTypeId;
     private String season;
-    private Long fieldId;
+    private String fieldId;
 
 }

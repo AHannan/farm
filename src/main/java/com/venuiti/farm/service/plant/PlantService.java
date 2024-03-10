@@ -32,7 +32,7 @@ public class PlantService {
         plantedRepository.save(plant);
     }
 
-    public List<PlantDataDTO> findByFarmer(Long farmId) {
+    public List<PlantDataDTO> findByFarmer(String farmId) {
         List<Plant> plantedList = plantedRepository.findByFieldFarmerId(farmId);
         List<PlantDataDTO> plantedDataList = PlantMapper.mapEntitiesToDTOs(plantedList);
 

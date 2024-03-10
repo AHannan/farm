@@ -16,13 +16,13 @@ public class ReportController {
     private ReportService reportService;
 
     @GetMapping("/farmer/{farmerId}")
-    public ResponseEntity<String> generateFarmReport(@PathVariable Long farmerId) {
+    public ResponseEntity<String> generateFarmReport(@PathVariable String farmerId) {
         String farmReport = reportService.generateFarmReport(farmerId);
         return ResponseEntity.ok(farmReport);
     }
 
     @GetMapping("/crop/{cropTypeId}")
-    public ResponseEntity<String> generateCropReport(@PathVariable Long cropTypeId) {
+    public ResponseEntity<String> generateCropReport(@PathVariable String cropTypeId) {
         String cropReport = reportService.generateCropReport(cropTypeId);
         return ResponseEntity.ok(cropReport);
     }

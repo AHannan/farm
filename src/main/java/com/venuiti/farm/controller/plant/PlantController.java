@@ -29,7 +29,7 @@ public class PlantController {
     }
 
     @GetMapping("/{farmId}")
-    public ResponseEntity<List<PlantDataDTO>> getPlantDataForFarm(@PathVariable Long farmId) {
+    public ResponseEntity<List<PlantDataDTO>> getPlantDataForFarm(@PathVariable String farmId) {
         List<PlantDataDTO> plantDataList = plantService.findByFarmer(farmId);
         return ResponseEntity.ok(plantDataList);
     }

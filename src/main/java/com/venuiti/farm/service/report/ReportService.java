@@ -18,22 +18,22 @@ public class ReportService {
     @Autowired
     private HarvestRepository harvestRepository;
 
-    public String generateFarmReport(Long farmId) {
-        List<Plant> plantedData = plantRepository.findByFieldFarmerId(farmId);
-        List<Harvest> harvestedData = harvestRepository.findByFieldFarmerId(farmId);
+    public String generateFarmReport(String farmerId) {
+        List<Plant> plantedData = plantRepository.findByFieldFarmerId(farmerId);
+        List<Harvest> harvestedData = harvestRepository.findByFieldFarmerId(farmerId);
 
         double totalExpected = plantedData.stream().mapToDouble(Plant::getExpectedProduct).sum();
         double totalActual = harvestedData.stream().mapToDouble(Harvest::getActualProduct).sum();
 
         StringBuilder report = new StringBuilder();
-        report.append("Farm Report for Farm ID ").append(farmId).append("\n");
+        report.append("Farm Report for Farmer ").append(farmerId).append("\n");
         report.append("Total Expected Product: ").append(totalExpected).append(" tons\n");
         report.append("Total Actual Product: ").append(totalActual).append(" tons\n");
 
         return report.toString();
     }
 
-    public String generateCropReport(Long cropTypeId) {
+    public String generateCropReport(String cropTypeId) {
         List<Plant> plantedData = plantRepository.findByCropTypeId(cropTypeId);
         List<Harvest> harvestedData = harvestRepository.findByCropTypeId(cropTypeId);
 

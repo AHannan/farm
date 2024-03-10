@@ -25,9 +25,9 @@ POST /api/farm-controller/harvest
 
 ```json
 {
-  "cropTypeId": 1,
+  "cropTypeId": "3e7e2d02-982d-47d7-8220-886a4d4b22d2",
   "actualProduct": 100.5,  
-  "fieldId": 1,
+  "fieldId": "d05b5c25-32d3-404a-837d-6483b37a8f52",
   "season": "SPRING"
 }
 ```
@@ -42,9 +42,9 @@ POST /api/farm-controller/plant
 
 ```json
 {
-    "cropTypeId": 2,
+    "cropTypeId": "f2f42295-8590-4a63-b6fd-1654bba76b28",
     "expectedProduct": 200.5,
-    "fieldId": 2,
+    "fieldId": "3c5e2d71-f61b-4870-8597-3a2065aa83e5",
     "season": "SUMMER"
 }
 ```

@@ -23,7 +23,7 @@ public class HarvestController {
     }
 
     @GetMapping("/{farmerId}")
-    public ResponseEntity<List<HarvestDataDTO>> getHarvestDataForFarmer(@PathVariable Long farmerId) {
+    public ResponseEntity<List<HarvestDataDTO>> getHarvestDataForFarmer(@PathVariable String farmerId) {
         List<HarvestDataDTO> harvestDataList = harvestService.findByFarmerId(farmerId);
         return ResponseEntity.ok(harvestDataList);
     }

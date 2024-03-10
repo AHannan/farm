@@ -7,9 +7,9 @@ import lombok.Data;
 @Data
 public class PlantDataDTO {
     private Long id;
-    private Long cropTypeId;
+    private String cropTypeId;
     private Double expectedProduct;
     private String season;
-    private Long fieldId;
+    private String fieldId;
 
 }

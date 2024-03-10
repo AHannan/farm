@@ -41,7 +41,7 @@ public class HarvestService {
     }
 
 
-    public List<HarvestDataDTO> findByFarmerId(Long farmerId) {
+    public List<HarvestDataDTO> findByFarmerId(String farmerId) {
         List<Harvest> harvestList = harvestRepository.findByFieldFarmerId(farmerId);
         return HarvestMapper.mapEntitiesToDTOs(harvestList);
     }
