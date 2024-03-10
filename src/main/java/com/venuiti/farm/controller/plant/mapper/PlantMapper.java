@@ -15,7 +15,7 @@ public class PlantMapper {
         Plant plant = new Plant();
         plant.setCropType(cropType);
         plant.setExpectedProduct(dto.getExpectedProduct());
-        plant.setSeason(dto.getSeason().toString());
+        plant.setSeason(Season.valueOf(dto.getSeason()));
         plant.setField(field);
         return plant;
     }
@@ -23,7 +23,7 @@ public class PlantMapper {
     public static PlantDataDTO toDTO(Plant plant) {
         return PlantDataDTO.builder()
                 .expectedProduct(plant.getExpectedProduct())
-                .season(Season.valueOf(plant.getSeason()))
+                .season(plant.getSeason().toString())
                 .fieldId(plant.getField().getId())
                 .build();
     }

@@ -33,15 +33,15 @@ public class ReportService {
         return report.toString();
     }
 
-    public String generateCropReport(String cropType) {
-        List<Plant> plantedData = plantRepository.findByCropType(cropType);
-        List<Harvest> harvestedData = harvestRepository.findByCropType(cropType);
+    public String generateCropReport(Long cropTypeId) {
+        List<Plant> plantedData = plantRepository.findByCropTypeId(cropTypeId);
+        List<Harvest> harvestedData = harvestRepository.findByCropTypeId(cropTypeId);
 
         double totalExpected = plantedData.stream().mapToDouble(Plant::getExpectedProduct).sum();
         double totalActual = harvestedData.stream().mapToDouble(Harvest::getActualProduct).sum();
 
         StringBuilder report = new StringBuilder();
-        report.append("Crop Report for Crop Type ").append(cropType).append("\n");
+        report.append("Crop Report for Crop Type ").append(cropTypeId).append("\n");
         report.append("Total Expected Product: ").append(totalExpected).append(" tons\n");
         report.append("Total Actual Product: ").append(totalActual).append(" tons\n");
 

@@ -51,10 +51,10 @@ POST /api/farm-controller/plant
 
 ### Generate Farm Report
 ```http
-GET /api/farm-controller/reports/harvest/farmer/{farmerId}
+GET /api/farm-controller/reports/farmer/{farmerId}
 ```
 
 ### Generate Crop Report
 ```http
-GET /api/farm-controller/reports/plant/crop/{cropTypeId}
+GET /api/farm-controller/reports/crop/{cropTypeId}
 ```

@@ -9,6 +9,5 @@ import java.util.List;
 public interface HarvestRepository extends JpaRepository<Harvest, Long> {
     boolean existsBySeasonAndFieldIdAndCropTypeId(Season season, Long fieldId, Long cropTypeId);
     List<Harvest> findByFieldFarmerId(Long farmerId);
-    List<Harvest> findByFieldFarmerIdAndSeason(Long farmerId, Season season);
-    List<Harvest> findByCropType(String cropType);
+    List<Harvest> findByCropTypeId(Long cropType);
 }

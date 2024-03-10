@@ -10,10 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @EqualsAndHashCode(callSuper = false)
 @Data
 @Entity
+@Table(name = "field", schema = "farm")
 public class Field {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
