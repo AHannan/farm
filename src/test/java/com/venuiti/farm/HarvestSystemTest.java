@@ -41,7 +41,7 @@ public class HarvestSystemTest {
     public void testSubmitHarvestData() throws Exception {
         var harvestData = HarvestDataDTO
                 .builder()
-                .cropTypeId("'a50c94d6-1e7f-4df2-b9eb-5c1e8b1e7b53'")
+                .cropTypeId("a50c94d6-1e7f-4df2-b9eb-5c1e8b1e7b53")
                 .actualProduct(100.0)
                 .season("SPRING")
                 .fieldId("d05b5c25-32d3-404a-837d-6483b37a8f52")
