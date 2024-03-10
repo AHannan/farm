@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Objects;
+import java.util.UUID;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
@@ -40,10 +41,10 @@ public class HarvestSystemTest {
     public void testSubmitHarvestData() throws Exception {
         var harvestData = HarvestDataDTO
                 .builder()
-                .cropTypeId(1L)
+                .cropTypeId("'a50c94d6-1e7f-4df2-b9eb-5c1e8b1e7b53'")
                 .actualProduct(100.0)
-                .season("Spring")
-                .fieldId(1L)
+                .season("SPRING")
+                .fieldId("d05b5c25-32d3-404a-837d-6483b37a8f52")
                 .build();
 
         ResponseEntity<String> expectedResponse = ResponseEntity.status(HttpStatus.CREATED).body("Harvest data submitted successfully");
